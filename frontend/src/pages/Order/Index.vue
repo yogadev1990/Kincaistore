@@ -64,10 +64,10 @@
                   <td>Dibuat</td>
                   <td>{{ order.created_at }}</td>
                 </tr>
-                <!--<tr>
+                <tr>
                   <td>Pengiriman</td>
                   <td>{{ order.shipping_courier_name }}</td>
-                </tr>-->
+                </tr>
                 <tr>
                   <td>Pembayaran</td>
                   <td>{{ order.transaction? order.transaction.payment_name : '' }}</td>
@@ -115,14 +115,14 @@
             <option value="0">--Status--</option>
             <option value="kirim">Kirim</option>
           </select>
-          <!--<q-input 
+          <q-input 
           filled
           square
           label="Ketik kirim untuk mengubah status"
           class="text-sm"
           v-model="form.resi"
           :rules="[val => val && val.length > 0 || 'Wajib diisi']"
-          />-->
+          />
         </q-card-section>
         <q-card-actions class="justify-end">
           <q-btn flat label="Batal" @click.prevent="closeModal" color="primary"></q-btn>

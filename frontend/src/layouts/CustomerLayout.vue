@@ -9,7 +9,7 @@
           flat icon-right="arrow_forward" label="Beranda" no-caps/>
       </q-toolbar>
       <q-toolbar class="bg-grey-1">
-        <!-- <q-separator vertical color="primary" /> -->
+        <q-separator vertical color="primary" />
         <q-btn stretch color="primary" flat label="Pesanan Saya" no-caps :to="{name: 'CustomerOrder'}"/>
           <q-separator vertical color="primary" />
           <q-btn stretch color="primary" flat label="Akun Saya" no-caps :to="{name: 'CustomerAccount'}"/>
@@ -21,7 +21,7 @@
           flat
           no-caps
           label="Keluar" />
-          <!-- <q-separator vertical color="primary" /> -->
+          <q-separator vertical color="primary" /> 
       </q-toolbar>
       </q-header>
     <q-page-container>

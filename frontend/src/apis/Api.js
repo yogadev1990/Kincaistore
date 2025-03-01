@@ -1,8 +1,8 @@
 import Axios from 'axios'
 import { Loading, Notify } from 'quasar'
 
-// Axios.defaults.withCredentials = true;
-// Axios.defaults.baseURL = process.env.API_URL
+Axios.defaults.withCredentials = true;
+Axios.defaults.baseURL = process.env.API_URL
 var BaseApi = Axios.create({
   baseURL: API_URL
 })
@@ -13,14 +13,14 @@ BaseApi.defaults.headers.common = { 'X-Requested-With': 'XMLHttpRequest' }
 BaseApi.interceptors.request.use(config => {
   // change some state in your store here
   // Do something before request is sent
-  // Loading.show()
-  // store().commit('SET_LOADING', true)
+  Loading.show()
+  store().commit('SET_LOADING', true)
 
   return config
 }, error => {
   // Do something with request error
   Loading.hide()
-  // store().commit('SET_LOADING', false)
+  store().commit('SET_LOADING', false)
 
   Notify.create({
     type: 'negative',
@@ -49,7 +49,7 @@ BaseApi.interceptors.response.use(response => {
       if (401 === error.response.status) {
         showMessage = false
           errors.push(error.response.data.message)
-          // store().dispatch('logOut')
+           store().dispatch('logOut')
           localStorage.removeItem('API_TOKEN')
           Notify.create({
             type: 'negative',
@@ -60,12 +60,12 @@ BaseApi.interceptors.response.use(response => {
 
       // Errors from backend
       if (error.response.status == 422) {
-          // errors = error.response.data.message
-          // showMessage = false
-          // store().commit('category/SET_ERRORS', error.response.data.errors)
-          // setTimeout(() => {
-          //   store().commit('SET_ERRORS', {})
-          // },15000)
+           errors = error.response.data.message
+           showMessage = false
+           store().commit('category/SET_ERRORS', error.response.data.errors)
+           setTimeout(() => {
+             store().commit('SET_ERRORS', {})
+           },15000)
 
           for(var errorKey in error.response.data.errors) {
               for(var i = 0; i < error.response.data.errors[errorKey].length; i++) {
@@ -76,11 +76,11 @@ BaseApi.interceptors.response.use(response => {
 
       // Backend error
       if (500 === error.response.status) {
-          // errors = error.response.data.message
+          errors = error.response.data.message
           errors.push('Something went wrong, Please try again')
       }
       if (400 === error.response.status) {
-          // errors = error.response.data.message
+          errors = error.response.data.message
           errors.push('Network Error')
       }
 

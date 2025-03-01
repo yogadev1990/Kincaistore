@@ -42,7 +42,7 @@
       <q-card flat class="product-detail relative">
         <q-card-section class="q-pt-xs">
           <div class="row items-center q-gutter-x-md">
-            <!--<q-rating 
+            <q-rating 
               v-model="productRating"
               readonly
               color="blue-8"
@@ -50,7 +50,7 @@
               icon-selected="star"
               icon-half="star_half"
               size="sm" 
-            />-->
+            />
             <div v-if="parseFloat(product.rating) > 0" class="text-weight-bold text-primary text-subtitle1 text-md"> {{ product.rating }}</div>
           </div>
           <div class="text-h6 text-weight-medium q-mb-sm q-mt-sm" v-if="product">{{ product.title }}</div>
@@ -69,10 +69,10 @@
               <div class="q-gutter-sm">
                 <q-btn unelevated :outline="varItemGetColor(varItem.id)" color="blue-6" v-for="(varItem, varItemIndex) in variant.variant_items" :key="varItemIndex" :label="varItem.variant_item_label" @click="handleVariantItemSelectted(varItem)"></q-btn>
               </div>
-              <!--<div v-if="variantItemSelected" class="q-pt-md q-gutter-sm">
+              <div v-if="variantItemSelected" class="q-pt-md q-gutter-sm">
                 <div class="q-pt-sm text-weight-medium">Pilih {{ variant.variant_item_name }}</div>
                 <q-btn unelevated :disabled="itemVal.item_stock < 1" :color="itemVal.item_stock < 1? 'grey-8' : 'blue-6'" :outline="varValueGetColor(itemVal.id)" v-for="(itemVal, itemValIndex) in variantItemSelected.variant_item_values" :key="itemValIndex" :label="itemVal.item_label" @click="handleSelectedItemValue(itemVal)"></q-btn>
-              </div>-->
+              </div>
             </div>
             </div>
           <div class="q-py-md">
@@ -80,14 +80,14 @@
             <div class="" v-html="product.description"></div>
           </div>
         </q-card-section>
-        <!--<q-card-section>
+        <q-card-section>
           <div class="flex justify-between items-center">
             <q-btn unelevated color="primary" @click="handleReviewModal" label="Berikan ulasan" class="q-my-xs"></q-btn>
             <div class="text-weight-medium text-primary text-subtitle2 q-my-xs">
              {{ product.reviews_count > 0 ? 'Total ' + product.reviews_count +' ulasan' : 'Belum ada ulasan'}}
             </div>
           </div>
-        </q-card-section>-->
+        </q-card-section>
       </q-card>
       <div id="ulasan">
         <q-card flat>
@@ -97,14 +97,14 @@
                 <div class="row justify-between items-center">
                   <div class="text-subtitle2 q-pa-sm">{{ review.name }}</div>
                   <q-item-section side>
-                     <!--<q-rating 
+                     <q-rating 
                       readonly
                       v-model="review.rating"
                       color="blue-7"
                       icon="star_border"
                       icon-selected="star"
                       icon-half="star_half"
-                    />-->
+                    />
                   </q-item-section>
                 </div>
                 <div class="q-pa-md bg-grey-2 text-grey-7 text-sm"> {{ review.comment }} </div>
@@ -113,7 +113,7 @@
           </q-card-section>
         </q-card>
         <div class="q-my-md row justify-center">
-          <q-btn flat color="primary" :loading="loadMoreLoading" v-if="product.reviews.length < product.reviews_count" label="loadmore.." @click="loadReview">
+          <q-btn flat color="primary" :loading="loadMoreLoading" v-if="product.reviews.length < product.reviews_count" label="LOAD MORE..." @click="loadReview">
             <template v-slot:loading>
               <q-spinner-facebook />
             </template>
@@ -122,7 +122,7 @@
       </div>
     </div>
     <q-footer class="q-gutter-x-sm flex q-pa-md bg-white">
-        <!-- <q-btn @click="btnFavorite" icon="favorite" outline round :color="isLike? 'pink' : 'dark'"></q-btn> -->
+        <q-btn @click="btnFavorite" icon="favorite" outline round :color="isLike? 'pink' : 'dark'"></q-btn>
         <q-btn unelevated rounded outline @click="chat" icon="chat" label="Chat" color="primary" class="col"></q-btn>
         <q-btn unelevated rounded @click="addNewItem" icon="shopping_basket" :label="cartTextButton" :color="cartTextColor" class="col"></q-btn>
     </q-footer>
@@ -136,14 +136,14 @@
           <q-form @submit.prevent="submitReview">
             <div>
             <div class="text-subtitle2 q-mb-sm">Berikan Ulasan Anda</div>
-              <!--<q-rating 
+              <q-rating 
                 v-model="form.rating"
                 color="blue-5"
                 icon="star_border"
                 icon-selected="star"
                 icon-half="star_half"
                 size="sm" 
-              />-->
+              />
             <div class="q-my-md q-gutter-y-xs">
               <q-input 
               dense 
@@ -204,7 +204,7 @@
       <q-card flat class="max-width bg-white" v-if="product">
         <q-linear-progress size="10px" :value="100" />
           <q-card-section>
-            <!-- <q-item-label class="text-weight-medium">{{ product.title }}</q-item-label> -->
+            <q-item-label class="text-weight-medium">{{ product.title }}</q-item-label>
           <q-list>
             <q-item>
               <q-item-section avatar>
@@ -250,10 +250,10 @@
               <div class="q-gutter-sm">
                 <q-btn unelevated :outline="varItemGetColor(varItem.id)" color="blue-6" v-for="(varItem, varItemIndex) in variant.variant_items" :key="varItemIndex" :label="varItem.variant_item_label" @click="handleVariantItemSelectted(varItem)"></q-btn>
               </div>
-              <!--<div v-if="variantItemSelected" class="q-pt-md q-gutter-sm">
+              <div v-if="variantItemSelected" class="q-pt-md q-gutter-sm">
                 <div class="q-pt-sm text-weight-medium">Pilih {{ variant.variant_item_name }}</div>
                 <q-btn unelevated :disabled="itemVal.item_stock < 1" :color="itemVal.item_stock < 1? 'grey-8' : 'blue-6'" :outline="varValueGetColor(itemVal.id)" v-for="(itemVal, itemValIndex) in variantItemSelected.variant_item_values" :key="itemValIndex" :label="itemVal.item_label" @click="handleSelectedItemValue(itemVal)"></q-btn>
-              </div>-->
+              </div>
             </div>
             </div>
         </q-card-section>
@@ -461,11 +461,11 @@ export default {
       if(this.isHasVariant) {
         if(!this.varianValueSelected || !this.variantItemSelected) {
           if(this.formVariantModal) {
-            //this.$q.notify({
-             // type: 'info',
-             // message: 'Silahkan pilih produk varian terlebih dahulu',
-            //})
-            //this.addToCart()
+            this.$q.notify({
+             type: 'info',
+             message: 'Silahkan pilih produk varian terlebih dahulu',
+            })
+            this.addToCart()
             this.cartModal = true
           } else {
             this.formVariantModal = true
@@ -523,16 +523,16 @@ export default {
     setPrice() {
       this.priceTotal = this.price*this.quantity
     },
-    //incrementQty() {
-      //if(this.quantity < this.currentStock) {
-        //this.quantity += 1
-     // } else {
-       // this.$q.dialog({
-         // title: 'Warning!',
-         // message: 'Stok tidak cukup, stok tersisa ' + this.currentStock + ' item.'
-        //})
-     // }
-    //},
+    incrementQty() {
+      if(this.quantity < this.currentStock) {
+        this.quantity += 1
+      } else {
+        this.$q.dialog({
+          title: 'Warning!',
+          message: 'Stok tidak cukup, stok tersisa ' + this.currentStock + ' item.'
+        })
+      }
+    },
     decrementQty() {
       if(this.quantity > 1) {
         this.quantity -= 1

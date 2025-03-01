@@ -16,11 +16,11 @@
               <q-icon name="person" />
           </template>
         </q-input>
-        <!--<q-input  v-model="form.phone" label="No Ponsel / Whatasapp">
+        <q-input  v-model="form.phone" label="No Ponsel / Whatsapp">
           <template v-slot:prepend>
               <q-icon name="phone" />
           </template>
-        </q-input>-->
+        </q-input>
         <q-input  type="email" v-model="form.email" label="Email">
           <template v-slot:prepend>
               <q-icon name="email" />

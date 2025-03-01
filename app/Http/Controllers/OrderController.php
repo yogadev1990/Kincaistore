@@ -54,7 +54,7 @@ class OrderController extends Controller
         $request->validate([
             'customer_name' => ['required', 'string'],
             'customer_whatsapp' => ['required', 'string'],
-            //'customer_email' => ['required', 'email'],
+            'customer_email' => ['required', 'email'],
             'payment_method' => ['required', 'string'],
             'payment_type' => ['required', 'string'],
             'payment_name' => ['required', 'string'],
@@ -78,7 +78,7 @@ class OrderController extends Controller
                 'order_ref' => $orderRef,
                 'customer_name' => $name,
                 'customer_whatsapp' => $whatsapp,
-                //'customer_email' => $request->customer_email,
+                'customer_email' => $request->customer_email,
                 'shipping_address' => $request->address,
                 'order_qty' => $request->quantity,
                 'order_weight' => $request->weight,
@@ -151,7 +151,7 @@ class OrderController extends Controller
                     'merchant_ref'      => $order->order_ref,
                     'amount'            => $order->order_total,
                     'customer_name'     => $order->customer_name,
-                    //'customer_email'    => $order->customer_email,
+                    'customer_email'    => $order->customer_email,
                     'customer_phone'    => $order->customer_whatsapp,
                     'order_items'       => $request->items,
                 ];
@@ -299,11 +299,11 @@ class OrderController extends Controller
     {
         $request->validate([
             'order_id' => ['required'],
-            //'resi' => ['required'],
+            'resi' => ['required'],
         ]);
         $order = Order::findOrFail($request->order_id);
 
-        //$order->shipping_courier_code = $request->resi;
+        $order->shipping_courier_code = $request->resi;
         $order->shipping_delivered = now();
         $order->order_status = 'SHIPPING';
 

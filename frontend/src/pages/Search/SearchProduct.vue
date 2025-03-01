@@ -6,7 +6,7 @@
             flat round dense
             icon="arrow_back" />
             <q-toolbar-title class="text-weight-bold brand">Cari Produk</q-toolbar-title>
-            <!-- <q-btn flat label="Cari Order" :to="{ name: 'OrderSearch'}"></q-btn> -->
+            <q-btn flat label="Cari Order" :to="{ name: 'OrderSearch'}"></q-btn>
        </q-toolbar>
     </q-header>
     <div class="col bg-white border q-ma-md">

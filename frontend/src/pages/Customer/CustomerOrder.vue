@@ -41,10 +41,10 @@
                   <td>Dibuat</td>
                   <td>{{ order.created_at }}</td>
                 </tr>
-                <!--<tr>
+                <tr>
                   <td>Pengiriman</td>
                   <td>{{ order.shipping_courier_name }}</td>
-                </tr>-->
+                </tr>
                 <tr>
                   <td style="vertical-align:top;">Pembayaran</td>
                   <td><div v-html="order.transaction? order.transaction.payment_name : ''"></div></td>

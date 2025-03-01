@@ -57,7 +57,7 @@ export default {
         if(this.currentStock >= 1) {
             return 'Beli Sekarang'
           }
-        //return 'Stok Habis'
+        return "Stok Habis"
         } else {
            if(this.currentStock >= 1) {
             return 'Beli'

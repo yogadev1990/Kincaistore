@@ -37,7 +37,7 @@ export default {
       form: {
         reference: '',
         customer_name:'',
-        //customer_email: '',
+        customer_email: '',
         customer_whatsapp: '',
         address: '',
         items: [],
@@ -154,7 +154,7 @@ export default {
       return this.carts[0].quantity * this.carts[0].price
     },
     total () {
-      return this.subtotal()//+this.form.shipping_cost
+      return this.subtotal() + this.form.shipping_cost
     },
     money(number) {
      return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR'}).format(number)

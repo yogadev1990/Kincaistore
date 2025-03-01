@@ -31,7 +31,7 @@
             <q-avatar icon="sell" color="primary" text-color="white"/>
            {{ product.category.title }}
           </q-chip>
-            <!--<q-chip :label="product.weight + ' gram'" dense size="12px" outline color="blue-6"></q-chip>-->
+            <q-chip :label="product.weight + ' gram'" dense size="12px" outline color="blue-6"></q-chip>
             <q-chip :label="'Stok: ' +product.stock " dense size="12px" outline color="blue-6"></q-chip>
           </div>
         </q-item-section>

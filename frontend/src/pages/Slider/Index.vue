@@ -16,7 +16,7 @@
       <div>Untuk hasil terbaik, Gunakan gambar dengan ukuran yang sama.</div>
     </div>
       <input type="file" class="hidden" ref="image" @change="handleFileUpload">
-        <!-- <progress max="100" :value="uploadPercentage" class="full-width" style="height:20px;" v-show="uploadPercentage > 0"></progress> -->
+        <progress max="100" :value="uploadPercentage" class="full-width" style="height:20px;" v-show="uploadPercentage > 0"></progress>
       <template v-if="sliders.available">
       <div class="q-py-md">
         <q-list separator>
@@ -141,4 +141,4 @@ export default {
   top:4px;
   right:4px;
   }
-</style>>
+</style>

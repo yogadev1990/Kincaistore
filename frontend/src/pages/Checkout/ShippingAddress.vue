@@ -11,7 +11,7 @@
         v-model="form.customer_name"
         @input="inputFormUser"
         />
-        <!--<q-input
+        <q-input
         v-if="canEmail"
         filled
         square
@@ -21,7 +21,7 @@
         label="Alamat Email"
         v-model="form.customer_email"
         @input="inputFormUser"
-        />-->
+        />
         <q-input
         label="No ponsel / Whatsapp"
         filled
@@ -39,7 +39,7 @@
         </div>
         <template v-if="!readyAddressBlock">
         <div class="q-gutter-y-md q-pa-sm">
-        <!--<q-select 
+        <q-select 
         filled
         square
         stack-label
@@ -75,9 +75,9 @@
           map-options
           @input="subdistrictSelected"
         />
-        <q-input v-if="config && config.rajaongkir_type == 'starter' || config && config.rajaongkir_type == 'basic'" filled
+        <!-- <q-input v-if="config && config.rajaongkir_type == 'starter' || config && config.rajaongkir_type == 'basic'" filled
         square
-        stack-label v-model="subdistrictText" label="Kecamatan" @input="setAddress"/>-->
+        stack-label v-model="subdistrictText" label="Kecamatan" @input="setAddress"/> -->
         <q-input filled
         square
         stack-label v-model="address1" label="Alamat" @input="setAddress"/>
@@ -93,7 +93,7 @@
       </template>
      
     </div>
-    <!--<div class="text-md q-px-sm q-pt-md q-pb-xs">Kurir</div>
+    <div class="text-md q-px-sm q-pt-md q-pb-xs">Kurir</div>
     <div id="courier" ref="courier" class="q-pa-sm">
       <q-select 
         :disable="!canSelectCourier"
@@ -145,7 +145,7 @@
         </q-item>
       </q-list>
       </div>
-    </div>-->
+    </div>
     <q-dialog v-model="useDataUserPrompt">
         <q-card style="max-width:400px;">
           <q-card-section>
@@ -167,10 +167,10 @@ import readyAddress from './ReadyAddress.vue'
 export default {
   name: 'ShippingAddressBlock',
   props: {
-    /**canEmail: {
+    canEmail: {
       type: Boolean,
       default: false
-    },*/
+    },
     isModalAddress: {
       type: Boolean,
       default: false
@@ -186,7 +186,7 @@ export default {
       form: {
         user_id: '',
         customer_name:'',
-        //customer_email: '',
+        customer_email: '',
         customer_whatsapp: '',
         address: '',
         items: [],
@@ -248,7 +248,7 @@ export default {
           n.push({label: el.toUpperCase(), value: el})
         })
         if(this.isCanCod) {
-          n.push( {label: 'COD ( Dikirim langsung oleh penjual )', value: 'cod'})
+          n.push( {label: 'COD ( Diambil di gedung Kedokteran Gigi UNSRI )', value: 'cod'})
         } 
       }
       
@@ -300,7 +300,7 @@ export default {
     if(this.user) {
       this.form.user_id = this.user.id
       this.form.customer_name = this.user.name
-      //this.form.customer_email = this.user.email
+      this.form.customer_email = this.user.email
       this.form.customer_whatsapp = this.user.phone ? this.user.phone : ''
     }
   },
@@ -383,14 +383,14 @@ export default {
     },
     setSubdistrictOption(res){
         // [{
-        //     "subdistrict_id":"538",
-        //     "province_id":"5",
-        //     "province":"Di Padang",
-        //     "city_id":"39",
-        //     "city":"Bantul",
-        //     "type":"Kabupaten",
-        //     "subdistrict_name":"Banguntapan"
-        //  }]
+        //      "subdistrict_id":"538",
+        //      "province_id":"5",
+        //      "province":"Di Padang",
+        //      "city_id":"39",
+        //      "city":"Bantul",
+        //      "type":"Kabupaten",
+        //      "subdistrict_name":"Banguntapan"
+        //   }]
       this.subdistrictOptions = []
       res.forEach(el => {
           let opts = { label:el.subdistrict_name, value: el.subdistrict_id }
@@ -547,7 +547,7 @@ export default {
     },
     setDataGetCost() {
       this.formGetCost.weight = this.sumWeight();
-      if(this.config //&& this.config.can_shipping
+      if(this.config && this.config.can_shipping
       ){
         this.formGetCost.origin = this.config.warehouse_id
       } 
@@ -615,36 +615,46 @@ export default {
       }
     },
     setAddress() {
-      let address1 = '';
-      /**if(this.province_id) {
-        province = this.provinceOptions.find(el => el.value == this.province_id).label
-      }
-      if(this.city_id) {
-        city = this.cityOptions.find(el => el.value == this.city_id).label
-      }
-      if(this.subdistrict_id) {
-        subdistrict = this.subdistrictOptions.find(el => el.value == this.subdistrict_id).label
-      }
-      if(this.subdistrictText) {
-        subdistrict = this.subdistrictText
-      }*/
-      if(this.address1) {
-        let addr = `${this.address1}`
-        this.form.address = addr
-        this.userAddressData.address = addr
-        //this.userAddressData.province = province
-        //this.userAddressData.city = city
-        //this.userAddressData.subdistrict = subdistrict
-        this.userAddressData.customer_name = this.form.customer_name
-        this.userAddressData.customer_whatsapp = this.form.customer_whatsapp
-        //this.userAddressData.customer_email = this.form.customer_email
+    let province = '';
+    let city = '';
+    let subdistrict = '';
 
-      } else {
-        this.form.address = ''
-      }
-      this.saveDataUser()
+    if (this.province_id) {
+        const provinceObj = this.provinceOptions.find(el => el.value == this.province_id);
+        if (provinceObj) province = provinceObj.label;
+    }
 
-      this.updateDataOrder()
+    if (this.city_id) {
+        const cityObj = this.cityOptions.find(el => el.value == this.city_id);
+        if (cityObj) city = cityObj.label;
+    }
+
+    if (this.subdistrict_id) {
+        const subdistrictObj = this.subdistrictOptions.find(el => el.value == this.subdistrict_id);
+        if (subdistrictObj) subdistrict = subdistrictObj.label;
+    }
+
+    if (this.subdistrictText) {
+        subdistrict = this.subdistrictText;
+    }
+
+    if (this.address1) {
+        this.form.address = this.address1;
+        this.userAddressData = {
+            address: this.address1,
+            province: province,
+            city: city,
+            subdistrict: subdistrict,
+            customer_name: this.form.customer_name,
+            customer_whatsapp: this.form.customer_whatsapp,
+            customer_email: this.form.customer_email
+        };
+    } else {
+        this.form.address = '';
+    }
+
+    this.saveDataUser();
+    this.updateDataOrder();
     },
     saveDataUser() { 
       if(this.userAddressData.address

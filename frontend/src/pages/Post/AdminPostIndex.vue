@@ -16,9 +16,9 @@
       <q-list separator>
        <q-item v-for="post in posts.data" :key="post.id">
 
-         <!--<q-item-section avatar top class="q-pr-sm">
+         <q-item-section avatar top class="q-pr-sm">
            <q-img v-if="post.image" :src="post.image_url" class="bg-white img-product-admin rounded-corners" ratio="1"/>
-        </q-item-section>-->
+        </q-item-section>
 
         <q-item-section top> 
           <q-item-label class="ellipsis text-md">{{ post.title }}</q-item-label>

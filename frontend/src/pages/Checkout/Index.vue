@@ -67,7 +67,7 @@
       <q-btn  v-if="step != 3 && form.shipping_courier_name != 'COD'" @click="next" no-caps unelevated label="Langkah Selanjutnya" color="primary"></q-btn>
       <q-btn :disabled="!isOk" v-if="form.shipping_courier_name == 'COD' && step != 3" @click="step = 3" no-caps unelevated label="Langkah Selanjutnya" color="primary"></q-btn>
       <q-btn :disabled="loading" v-if="step == 3" @click="submitOrder" no-caps unelevated label="Proses Pesanan" color="primary"></q-btn>
-      <!-- <q-btn :disabled="step == 1" @click="prev" no-caps outline label="Kembali" color="primary"></q-btn> -->
+      <q-btn :disabled="step == 1" @click="prev" no-caps outline label="Kembali" color="primary"></q-btn>
     </div>
   </q-page>
 </template>
@@ -98,7 +98,7 @@ export default {
       form: {
         reference: '',
         customer_name:'',
-        //customer_email: '',
+        customer_email: '',
         customer_whatsapp: '',
         payment_method: '',
         payment_name: '',
@@ -210,7 +210,7 @@ export default {
     checkStepOk() {
       if(this.step == 1) { 
         if(this.form.customer_name 
-            //&& this.form.customer_email 
+            && this.form.customer_email 
             && this.form.customer_whatsapp 
             && this.form.shipping_courier_name
             && this.form.address) {

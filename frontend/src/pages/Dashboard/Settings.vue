@@ -55,7 +55,7 @@ export default {
         { label: 'Iklan Produk', caption: 'Kelola produk Favorit/Terbaru', path: 'Slider', icon: 'view_carousel', color: 'teal'},
         { label: 'Banner Informasi', caption: 'Kelola banner, partner dan featured', path: 'AdminBlockIndex', icon: 'space_dashboard', color: 'amber-7'},
         { label: 'Transaksi', caption: 'Kelola pesanan', path: 'OrderIndex', icon: 'receipt', color: 'blue-7'},
-        //{ label: 'Akun Bank', caption: 'Kelola Akun Bank', path: 'BankIndex', icon: 'account_balance', color: 'blue-7'},
+        { label: 'Akun Bank', caption: 'Kelola Akun Bank', path: 'BankIndex', icon: 'account_balance', color: 'blue-7'},
         { label: 'Pengaturan', caption: 'Pengaturan Website dan pengiriman', path: 'Config', icon: 'settings', color: 'accent'},
       ]
     }

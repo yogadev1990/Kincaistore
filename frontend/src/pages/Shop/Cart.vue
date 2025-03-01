@@ -127,7 +127,7 @@ export default {
       return this.$store.state.session_id
     },
     isCanChekout: function() {
-      if(this.carts.length && this.config //&& this.config.can_shipping
+      if(this.carts.length && this.config && this.config.can_shipping
       ) {
         if(this.config.is_tripay_ready || this.config.is_bank_ready) {
           return true
@@ -150,7 +150,7 @@ export default {
     if(!this.shop) {
       this.$store.dispatch('getShop')
     }
-    // this.$store.commit('cart/getCarts')
+     this.$store.commit('cart/getCarts')
   },
   methods: {
     onResponse(evt) {

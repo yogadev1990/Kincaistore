@@ -36,7 +36,7 @@
         <q-btn label="Update Data" type="submit" color="primary" class="full-width"></q-btn>
       </q-footer>
     </q-form>
-    <!--<div class="q-my-md">
+    <div class="q-my-md">
       <q-btn label="Upload Gambar" size="sm" color="primary" icon="upload" class="mt-2 mr-2" type="button" @click.prevent="selectNewImage" />
     </div>
       <q-list v-if="imagePreview">
@@ -49,7 +49,7 @@
               <q-btn @click="removeImage" size="sm" color="red" glossy round icon="delete" />
           </q-item-section>
         </q-item>
-    </q-list> -->
+    </q-list> 
     <input type="file" class="hidden" ref="image" @change="updateImagePreview" />
     <q-inner-loading :showing="loading">
         <q-spinner-facebook size="50px" color="primary"/>

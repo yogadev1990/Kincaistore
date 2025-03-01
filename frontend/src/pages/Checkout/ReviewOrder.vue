@@ -26,7 +26,7 @@
             <td>:</td>
             <td><div v-html="form.address"></div></td>
           </tr>
-          <!--<tr>
+          <tr>
             <th align="left">Kurir</th>
             <td>:</td>
             <td>{{ form.shipping_courier_name }}</td>
@@ -35,7 +35,7 @@
             <th align="left">Servis</th>
             <td>:</td>
             <td>{{ form.shipping_courier_service }}</td>
-          </tr>-->
+          </tr>
         </table>
     </fieldset>
     <fieldset class="q-mt-lg">
@@ -57,7 +57,7 @@
         </div>
         <div class="flex justify-end">
           <table class="table dense">
-            <!--<tr>
+            <tr>
               <th align="right">Subtotal</th>
               <td align="right">:</td>
               <td align="right">{{ moneyIDR(form.subtotal) }}</td>
@@ -66,7 +66,7 @@
               <th align="right">Ongkos Kirim</th>
               <td align="right">:</td>
               <td align="right">{{ form.shipping_cost? moneyIDR(form.shipping_cost*0) : 0 }}</td>
-            </tr>-->
+            </tr>
             <tr>
               <th align="right">Total</th>
               <td align="right">:</td>

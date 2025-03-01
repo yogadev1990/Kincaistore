@@ -20,7 +20,7 @@
         <q-card-section>
           <div class="">
             <div>
-              <!-- <div class="text-md">Metode Pembayaran</div> -->
+              <div class="text-md">Metode Pembayaran</div> 
               <div class="text-md text-weight-bold text-primary">{{ transaction.payment_method.split('_').join(' ') }}</div>
               <div class="text-grey-7 q-mt-sm">
                 Lakukan pembayaran sebelum melewati batas pembayaran serta pastikan nominal pembayaran sesuai dengan tagihan. Konfirmasi pembayaran dengan megirim bukti transfer setelah melakukan pembayaran.

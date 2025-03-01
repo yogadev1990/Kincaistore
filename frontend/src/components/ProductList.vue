@@ -19,7 +19,7 @@
             </q-chip>
             <q-space></q-space>
             <!-- <cart-button :product="product" /> -->
-            <!--<favorite-button :product="product" />-->
+            <favorite-button :product="product" />
           </div>
         </div>
       </q-item-section>
@@ -29,12 +29,12 @@
   </q-list>
 </template>
 <script>
-// import CartButton from 'components/CartButton.vue'
-//import FavoriteButton from 'components/FavoriteButton.vue'
+import CartButton from 'components/CartButton.vue'
+import FavoriteButton from 'components/FavoriteButton.vue'
 export default {
   name: 'ProductCard',
   props: { product: Object},
-  //components: { FavoriteButton },
+  components: { FavoriteButton },
   
   methods: {
     money(number) {

@@ -1,4 +1,4 @@
-<!--<template>
+<template>
   <q-btn outline @click="btnFavorite" icon="favorite" size="sm" unelevated round :color="getFavoriteStyle()"></q-btn>
 </template>
 
@@ -25,4 +25,4 @@ export default {
 
 <style>
 
-</style>-->
+</style>

@@ -14,10 +14,10 @@
         <tampilan :config="config"/>
         <theming :config="config"/>
         <checkout-config :config="config" />
-        <!--<shipping :config="config"/>
+        <shipping :config="config"/>
         <notification :config="config"/>
         <tripay :config="config"/>
-        <system-update :config="config"/>-->
+        <system-update :config="config"/>
       </div>
       <q-inner-loading :showing="loading">
       </q-inner-loading>
@@ -25,16 +25,16 @@
 </template>
 
 <script>
-//import Shipping from './shipping.vue'
+import Shipping from './shipping.vue'
 import Tampilan from './Tampilan.vue'
 import Theming from './Theming.vue'
 import CheckoutConfig from './CheckoutConfig.vue'
-//import Notification from './Notification.vue'
-//import Tripay from './Tripay.vue'
-//import SystemUpdate from './SystemUpdate.vue'
+import Notification from './Notification.vue'
+import Tripay from './Tripay.vue'
+import SystemUpdate from './SystemUpdate.vue'
  export default {
   name: 'AdminConfig',
-  components: { Tampilan, Theming, CheckoutConfig },
+  components: { Tampilan, Theming, CheckoutConfig, Shipping, Notification, Tripay, SystemUpdate },
   computed: {
     loading() {
       return this.$store.state.loading

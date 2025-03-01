@@ -36,7 +36,7 @@
         <q-btn :loading="loading" label="Simpan" type="submit" color="primary" class="full-width"></q-btn>
       </q-footer>
     </q-form>
-    <!--<div class="q-my-md">
+    <div class="q-my-md">
       <q-btn label="Upload Gambar" size="sm" color="primary" icon="upload" class="mt-2 mr-2" type="button" @click.prevent="selectNewImage" />
     </div>
       <q-list v-if="imagePreview">
@@ -50,7 +50,7 @@
           </q-item-section>
         </q-item>
     </q-list> 
-    <input type="file" class="hidden" ref="image" @change="updateImagePreview" />-->
+    <input type="file" class="hidden" ref="image" @change="updateImagePreview" />
   </q-page>
 </template>
 

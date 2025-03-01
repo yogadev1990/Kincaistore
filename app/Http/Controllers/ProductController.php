@@ -34,7 +34,7 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    /**public function getProductsFavorites(Request $request)
+    public function getProductsFavorites(Request $request)
     {
         return response([
             'success' => true, 
@@ -43,7 +43,7 @@ class ProductController extends Controller
             ]
         ],200);
        
-    }*/
+    }
     public function getProductsByCategory($id)
     {     
         return response([
@@ -112,7 +112,7 @@ class ProductController extends Controller
         $request->validate([
             'title' => 'required|unique:products',
             'price' => 'required|numeric',
-            //'weight' => 'required|numeric',
+            'weight' => 'required|numeric',
             'stock' => 'required|numeric',
             'description' => 'required',
             'images' => 'required'
@@ -136,7 +136,7 @@ class ProductController extends Controller
             $product->slug = $slug;
             $product->price = $request->price;
             $product->stock = $request->stock;
-            //$product->weight = $request->weight;
+            $product->weight = $request->weight;
             
             $product->category_id =  $request->category_id;
 
@@ -238,7 +238,7 @@ class ProductController extends Controller
             'id' => 'required',
             'title' => 'required',
             'price' => 'required|numeric',
-            //'weight' => 'required|numeric',
+            'weight' => 'required|numeric',
             'stock' => 'required|numeric',
             'description' => 'required',
             'images' => $request->del_images && count($product->assets) == count($request->del_images) && !$request->images?'required' : 'nullable'
@@ -255,7 +255,7 @@ class ProductController extends Controller
         $product->title = $request->title;
         $product->price = $request->price;
         $product->stock = $request->stock;
-        //$product->weight = $request->weight;
+        $product->weight = $request->weight;
         $product->description = $request->description;
         $product->category_id = $request->category_id;
 
@@ -390,13 +390,13 @@ class ProductController extends Controller
             'product_id' => ['required'],
             'name' => ['required'],
             'comment' => ['required'],
-            /**'rating' => ['required', 'numeric', 'min:1', 'max:5'],*/
+            'rating' => ['required', 'numeric', 'min:1', 'max:5'],
         ]);
         $product = Product::findOrFail($request->product_id);
 
         $product->reviews()->create([
             'comment' => $request->comment,
-            /**'rating' => $request->rating,*/
+            'rating' => $request->rating,
             'name' => $request->name,
         ]);
 

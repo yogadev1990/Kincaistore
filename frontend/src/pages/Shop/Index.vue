@@ -28,11 +28,11 @@
         </div>
       </div>
      
-      <!--<div>
+      <div>
         <input type="file" class="hidden" ref="image" @change="updateImagePreview">
         <q-btn label="Upload Logo" size="sm" color="primary" icon="upload" class="mt-2 mr-2" type="button" @click.prevent="handleBtnUpload"></q-btn>
        <div class="text-xs text-red q-my-md" v-if="errors.logo"> {{ errors.logo[0]}}</div>
-      </div>-->
+      </div>
       <q-list v-if="imagePreview">
        <q-item>
         <q-item-section top>
@@ -104,7 +104,7 @@ export default {
         self.isLoading = false
         if(response.status == 200) {
           self.$store.commit('SET_SHOP', response.data.results)
-          // localStorage.setItem('_washop', JSON.stringify(response.data.results))
+          localStorage.setItem('_washop', JSON.stringify(response.data.results))
           this.$q.notify({
             type: 'positive',
             message: 'Berhasil menyimpan data'
@@ -158,7 +158,7 @@ export default {
       let self = this
       Api().get('shop').then(response => {
         if(response.status == 200) {
-          // localStorage.setItem('_washop', JSON.stringify(response.data.results))
+          localStorage.setItem('_washop', JSON.stringify(response.data.results))
           self.toko = response.data.results
           self.setDataToko()
           self.$store.commit('SET_SHOP', response.data.results)

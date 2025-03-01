@@ -111,7 +111,7 @@
         </q-card-section>
         <div class="column q-px-md q-pb-md text-left q-gutter-y-sm">
           <q-btn unelevated @click="buyNow" no-caps label="Minat? Chat disini" color="primary" class="full-width"></q-btn>
-          <!-- <q-btn outline v-close-popup no-caps label="close" color="primary" class="full-width"></q-btn> -->
+          <q-btn outline v-close-popup no-caps label="close" color="primary" class="full-width"></q-btn>
         </div>
       </q-card>
     </q-dialog>

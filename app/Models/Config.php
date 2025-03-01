@@ -14,7 +14,7 @@ class Config extends Model
         'theme', 
         'theme_color', 
         'home_view_mode', 
-        'product_view_mode', 
+        'product_view_mode',  
         'rajaongkir_type', 
         'rajaongkir_apikey', 
         'rajaongkir_couriers', 
@@ -36,7 +36,7 @@ class Config extends Model
     ];
     public $appends = [
         'is_shippable', 
-        //'can_shipping', 
+        'can_shipping', 
         'is_tripay_ready',
         'is_telegram_ready',
         'courier_available', 

@@ -143,7 +143,7 @@ class StoreController extends Controller
 
             return response([
                 'success' => false,
-                'results' => null
+                'results' => $th->getMessage()
             ], 500);
         }
 

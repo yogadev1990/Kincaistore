@@ -28,13 +28,13 @@
             <div class="row justify-between items-center q-pa-xs ">
               <div class="text-md2 text-weight-medium">{{ variant.variant_name }} {{ item.variant_item_label }}</div>
               <div class="q-gutter-x-sm">
-                <!--<q-btn no-caps padding="4px 8px" unelevated size="12px" color="blue-6" @click="handleAddVariantValue(varIndex, itemIndex)">
+                <q-btn no-caps padding="4px 8px" unelevated size="12px" color="blue-6" @click="handleAddVariantValue(varIndex, itemIndex)">
                     <q-icon name="add"></q-icon>
                     <span>Tambah {{ variant.variant_item_name }}</span>
-                </q-btn>-->
+                </q-btn>
               </div>
             </div>
-            <!--<q-list class="bg-white q-pa-sm">
+            <q-list class="bg-white q-pa-sm">
               <q-item  v-for="(subItem, subItemIndex) in item.variant_item_values" :key="subItemIndex" class="q-pa-sm">
                 <q-item-section>
                   <q-input stack-label filled square required v-model="variants[varIndex].variant_items[itemIndex].variant_item_values[subItemIndex].item_label" dense :label="variant.variant_item_name"></q-input>
@@ -42,8 +42,8 @@
                 <q-item-section>
                   <q-input stack-label filled square required v-model="variants[varIndex].variant_items[itemIndex].variant_item_values[subItemIndex].additional_price" dense label="Additional Price" type="number" min="0"></q-input>
 
-                </q-item-section>-->
-                <!--<q-item-section>
+                </q-item-section>
+                <q-item-section>
                   <q-input stack-label filled square required v-model="variants[varIndex].variant_items[itemIndex].variant_item_values[subItemIndex].item_stock" dense label="Stok" type="number" min="0"></q-input>
 
                 </q-item-section>
@@ -51,7 +51,7 @@
                   <q-btn flat icon="close" unelevated dense round color="red-6" @click="handleRemoveVariantValue(varIndex, itemIndex, subItemIndex)"></q-btn>
                 </q-item-section>
               </q-item>
-            </q-list>-->
+            </q-list>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@
             <div class="card-heading">Tambah Produk Varian</div>
             <q-card-section>
               <q-input required label="Nama Varian" v-model="tempVariant"  hint="contoh: Rasa, Warna"></q-input>
-              <!--<q-input required label="Varian Rasa" v-model="tempVariantItem"  hint="contoh: Coklat, Coklat x Tiramisu"></q-input>-->
+              <q-input required label="Varian Rasa" v-model="tempVariantItem"  hint="contoh: Coklat, Coklat x Tiramisu"></q-input>
               <div class="row justify-end q-mt-md q-gutter-x-sm">
                 <q-btn type="button" label="Batal" unelevated color="primary" outline v-close-popup></q-btn>
                 <q-btn type="submit" label="Tambah" unelevated color="primary"></q-btn>
@@ -81,8 +81,8 @@
             <div class="card-heading">Tambah varian {{ variantSelectedLabel }}</div>
             <q-card-section>
               <q-input :label="variantSelectedLabel" required v-model="tempVarianItem"></q-input>
-              <!--<q-input :label="variantItemSelectedLabel" required v-model="tempVarianValue"></q-input>
-              <div class="text-sm text-grey-7 q-pt-sm">{{ variantItemSelectedLabel }} untuk varian {{ variantSelectedLabel }}, gunakan tanda koma (,) untuk multiple varian</div>-->
+              <q-input :label="variantItemSelectedLabel" required v-model="tempVarianValue"></q-input>
+              <div class="text-sm text-grey-7 q-pt-sm">{{ variantItemSelectedLabel }} untuk varian {{ variantSelectedLabel }}, gunakan tanda koma (,) untuk multiple varian</div>
               <div class="row justify-end q-mt-md q-gutter-x-sm">
                 <q-btn type="button" label="Batal" unelevated color="primary" outline v-close-popup></q-btn>
                 <q-btn type="submit" label="Tambah" unelevated color="primary"></q-btn>

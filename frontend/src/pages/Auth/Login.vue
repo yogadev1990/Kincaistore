@@ -57,11 +57,12 @@
         </div>
           </q-form>
           <div class="text-center q-mt-sm">
-          Login khusus untuk admin <!--<q-btn no-caps color="blue-7" padding="xs" flat :disabled="isLoading" label="Daftar Disini" :to="{ name: 'Register'}"></q-btn>-->
+          Login khusus untuk admin
+          <q-btn no-caps color="blue-7" padding="xs" flat :disabled="isLoading" label="Daftar Disini" :to="{ name: 'Register'}"></q-btn>
           </div>
-          <!--<div class="text-center q-mt-sm">
+          <div class="text-center q-mt-sm">
           <q-btn no-caps color="blue-7" padding="xs" flat :disabled="isLoading" label="Lupa password?" :to="{ name: 'ForgotPassword'}"></q-btn>
-          </div>-->
+          </div>
         </q-card-section>
       </q-card>
     </div>

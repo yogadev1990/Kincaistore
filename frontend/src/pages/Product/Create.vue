@@ -8,7 +8,7 @@
         <q-toolbar-title>
          Tambah Produk
         </q-toolbar-title>
-        <!--<q-btn flat icon="add" label="Produk Variasi" @click="handleAddVariant" v-if="!form.variants.length"></q-btn>-->
+        <q-btn flat icon="add" label="Produk Variasi" @click="handleAddVariant" v-if="!form.variants.length"></q-btn>
       </q-toolbar>
       </q-header>
       <q-form @submit.prevent="submit"> 
@@ -43,7 +43,7 @@
                 />
               </div>
 
-              <!--<div class="col">
+              <div class="col">
 
               <q-input 
                 filled 
@@ -53,7 +53,7 @@
                 suffix="gram"
                 :rules="[val => val && val > 49 || 'Berat harus diisi min 50 gram']"
               />
-              </div>-->
+              </div>
 
 
             </div>

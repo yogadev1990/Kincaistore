@@ -30,7 +30,7 @@
 
       <div class="row items-center justify-between">
         <q-btn label="Upload Ikon" size="sm" color="primary" icon="upload" class="mt-2 mr-2" type="button" @click.prevent="selectNewImage" />
-        <!--<q-btn label="Upload Banner" size="sm" color="teal" icon="upload" class="mt-2 mr-2" type="button" @click.prevent="selectNewBanner" />-->
+        <q-btn label="Upload Banner" size="sm" color="teal" icon="upload" class="mt-2 mr-2" type="button" @click.prevent="selectNewBanner" />
       </div>
         
        <div class="text-xs text-red q-my-md" v-if="errors.images"> {{ errors.images[0]}}</div>

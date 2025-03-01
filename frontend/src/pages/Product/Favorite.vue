@@ -1,4 +1,4 @@
-<!--<template>
+<template>
  <q-page :class="{'flex flex-center':!products.available}" class="q-pb-xl">
    <q-header class="text-primary bg-white">
        <q-toolbar>
@@ -69,4 +69,4 @@ export default {
 
 <style>
 
-</style>-->
+</style>

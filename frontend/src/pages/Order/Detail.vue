@@ -56,7 +56,7 @@
             </table>
             <div class="column justify-end bg-grey-1 items-end q-pa-sm">
               <table class="dense">
-                <!--<tr>
+                <tr>
                   <td align="right">SubTotal</td>
                   <td>:</td>
                   <td align="right">{{ moneyIDR(invoice.order_subtotal) }}</td>
@@ -70,7 +70,7 @@
                   <td align="right">Kode Unik</td>
                   <td>:</td>
                   <td align="right">- {{ invoice.order_unique_code ? invoice.order_unique_code : '-' }}</td>
-                </tr>-->
+                </tr>
                 <tr>
                   <th align="right">Total</th>
                   <td>:</td>
@@ -104,7 +104,7 @@
             </div>
           </q-card-section>
         </q-card>
-        <!--<q-card class="bg-white shadow" square>
+        <q-card class="bg-white shadow" square>
             <div class="card-heading">Informasi Ekspedisi</div>
           <q-card-section>
             <div class="text-grey-9">
@@ -127,16 +127,16 @@
               </table>
             </div>
           </q-card-section>
-        </q-card>-->
+        </q-card>
         <q-card class="bg-white shadow" square>
           <div class="card-heading border-b">Informasi Pembayaran</div>
           <q-card-section>
               <table class="dense">
-                <!--<tr>
+                <tr>
                   <td>Info</td>
                   <td>:</td>
                   <td>{{ invoice.transaction.payment_method.split('_').join(' ') }}</td>
-                </tr>-->
+                </tr>
                 <tr>
                   <td style="vertical-align:top;">Detil</td>
                   <td style="vertical-align:top;">:</td>
